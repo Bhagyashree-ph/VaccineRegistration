@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vaccine Appointment System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Covid Vaccination</h1><br/>
+
+        <!-- Registration Form -->
+        <div id="registration-form" class="form">
+            <h2>Register</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Name" required><br/>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" required><br/>
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Age" required><br/>
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" placeholder="Pincode" required><br/>
+            <label for="aadhar">Aadhar number:</label>
+            <input type="text" id="aadhar" placeholder="Aadhar No" pattern="[0-9]{12}" required><br/>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Password" required><br/>
+            <button onclick="showLoginForm()">Already registered??</button>
+            <button onclick="registerUser()" type="button">Register</button>
+        </div>
+        
+
+        <!-- Admin Login Form -->
+        <div id="admin-login-form" class="form">
+            <h2>Admin Login</h2>
+            <label for="phone">Username:</label>
+            <input type="text" id="admin-username" placeholder="Username" required><br/>
+            <label for="password">Password:</label>
+            <input type="password" id="admin-password" placeholder="Password" required><br/>
+            <button onclick="adminLogin()">Login</button>
+        </div>
+
+        <!-- User Interface (Visible after admin login) -->
+        <div id="user-interface" class="form" style="display: none;">
+            <h2>Welcome, Admin</h2>
+
+            <button onclick="getTotalUsers()">Total Registered Users</button>
+            <button onclick="filterUsersByAge()">Filter Users by Age</button>
+            <button onclick="filterUsersByPincode()">Filter Users by Pincode</button>
+            <button onclick="filterUsersByVaccinationStatus()">Filter Users by Vaccination Status</button>
+
+            <h2>Registered Slots for Vaccine</h2>
+            <input type="date" id="slot-date">
+            <button onclick="getRegisteredSlots()">Get Registered Slots</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="form">
+            <h2>User Login</h2>
+            <label for="phone">Username:</label>
+            <input type="tel" id="login-phone" placeholder="Phone Number" required><br/>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password" required><br/>
+            <button onclick="loginUser()">Login</button>
+        </div> 
+    </div>
+
+    <!-- Vaccine Scheduling Section (Visible after login) -->
+    <div id="vaccine-schedule" class="container" style="display: none;">
+        <h2>Schedule Vaccine Appointment</h2>
+        <!-- Display available time slots and allow users to register -->
+        <p>Available time slots for the first/second dose will be displayed here.</p>
+        <button id="register-slot-button" onclick="registerVaccineSlot()">Register Slot</button>
+        <button id="update-slot-button" onclick="updateVaccineSlot()">Update Slot</button>
+        <button id="vaccinated-button" onclick="markVaccinated()">Mark Vaccinated</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
