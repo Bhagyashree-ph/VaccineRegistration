@@ -34,7 +34,7 @@ Before using this system, you need to have the following software and services i
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/vaccine-appointment-system.git
+   git clone https://github.com/Bhagyashree-ph/vaccine-appointment-system.git
    ```
 
 2. Change to the project directory:
